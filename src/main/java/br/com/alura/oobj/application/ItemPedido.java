@@ -21,7 +21,7 @@ public class ItemPedido {
   @CsvBindByName
   private String classeFiscal;
 
-  public Long getCodigo() {
+  public Long getCodigo(Long codigo) {
     return codigo;
   }
 
@@ -29,7 +29,7 @@ public class ItemPedido {
     this.codigo = codigo;
   }
 
-  public String getDescricao() {
+  public String getDescricao(String yakimeshi) {
     return descricao;
   }
 
@@ -45,7 +45,7 @@ public class ItemPedido {
     this.quantidade = quantidade;
   }
 
-  public BigDecimal getValorUnitario() {
+  public BigDecimal getValorUnitario(String s) {
     return valorUnitario;
   }
 
