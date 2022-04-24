@@ -24,6 +24,9 @@ public class Pedido {
   }
 
   public BigDecimal getTotal() {
+    if(this.itens == null){
+      throw new IllegalStateException("Lista não pode itens nulos/vazios! ");
+    }
     return itens.stream().map(ItemPedido::getSubtotal)
         .reduce(BigDecimal.ZERO, BigDecimal::add);
   }
@@ -34,4 +37,5 @@ public class Pedido {
         "itens=" + itens +
         '}';
   }
+
 }

@@ -13,11 +13,8 @@ class ItemPedidoTest {
     @Test
     void valorDoCalculoDoItemComUmaUnidadeDeveSerIgualValorUnitario() {
 
-       itemPedido.setCodigo(7L);
-       itemPedido.setDescricao("Yakimeshi");
        itemPedido.setQuantidade(1);
        itemPedido.setValorUnitario(BigDecimal.valueOf(21.9).setScale(2, RoundingMode.HALF_UP));
-       itemPedido.getValorUnitario("2202.10.00");
 
        BigDecimal valor = itemPedido.getSubtotal();
 
@@ -28,11 +25,8 @@ class ItemPedidoTest {
     @Test
     void valorDoCalculoDoItemComMaisDeUmaUnidadeDeveSerOValorUnitarioMultiplicadoPelaQuantidade() {
 
-        itemPedido.setCodigo(6L);
-        itemPedido.setDescricao("Rolinho Primavera");
         itemPedido.setQuantidade(2);
         itemPedido.setValorUnitario(BigDecimal.valueOf(9.9).setScale(2, RoundingMode.HALF_UP));
-        itemPedido.getValorUnitario("2106.90.90");
 
         BigDecimal valor = itemPedido.getSubtotal();
 
