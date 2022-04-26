@@ -24,11 +24,11 @@ public class Pedido {
   }
 
   public BigDecimal getTotal() {
-    if(this.itens == null){
-      throw new IllegalStateException("Lista não pode itens nulos/vazios! ");
+    if(this.itens != null){
+      return itens.stream().map(ItemPedido::getSubtotal)
+              .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
-    return itens.stream().map(ItemPedido::getSubtotal)
-        .reduce(BigDecimal.ZERO, BigDecimal::add);
+    throw new IllegalStateException("Lista não pode itens nulos/vazios! ");
   }
 
   @Override
